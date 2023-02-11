@@ -4,12 +4,19 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore ."
   },
   "devDependencies": {
     "@nuxt/content": "npm:@nuxt/content-edge@latest",
     "@types/leaflet": "^1.7.11",
+    "@types/node": "^18.11.18",
+    "eslint": "^8.33.0",
+    "eslint-plugin-vue": "^9.9.0",
     "nuxt": "npm:nuxt3@latest",
     "sass": "^1.54.5"
+  },
+  "dependencies": {
+    "@microflash/remark-figure-caption": "^1.0.0"
   }
 }
