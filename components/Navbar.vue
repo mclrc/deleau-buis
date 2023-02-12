@@ -8,21 +8,25 @@
       <header id="branding">
         <router-link to="/"><h1>Palais Deleau</h1></router-link>
       </header>
-      <router-link
-        v-if="!$route.path.startsWith('/booking')"
-        to="/booking"
-        id="booking-link"
-        class="btn-primary"
-        >Buchen</router-link
-      >
+      <ul id="links">
+        <ContentNavigation v-slot="{ navigation }">
+          <li class="nav-entry" v-for="link of navigation" :key="link._path">
+            <NuxtLink :to="link._path">{{ link.title }}</NuxtLink>
+          </li>
+        </ContentNavigation>
+      </ul>
     </nav>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch } from "vue";
+import {
+  onMounted,
+  ref,
+  watch,
+} from 'vue';
 
-import { useRoute } from "vue-router";
+import { useRoute } from 'vue-router';
 
 const scrolled = ref(false);
 const collapsed = ref(true);
@@ -53,7 +57,7 @@ onMounted(() => document.addEventListener("scroll", onScroll));
 $expand-collapse-anim-time: 0.2s;
 
 #navbar {
-  position: fixed;
+  position: sticky;
   user-select: none;
   z-index: 1001; // Has to be > 1000 because of the leaflet controls
   top: 0;
@@ -61,9 +65,6 @@ $expand-collapse-anim-time: 0.2s;
   width: 100vw;
   display: flex;
   font-family: "Quicksand";
-  transition: background-color 0.3s;
-  transition: color 0.3s;
-  color: white;
   &.scrolled,
   &:not(.collapsed) {
     background-color: white;
@@ -75,6 +76,9 @@ $expand-collapse-anim-time: 0.2s;
     width: 100%;
     max-width: $max-content-width;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
   }
 }
 #top {
@@ -117,7 +121,6 @@ $expand-collapse-anim-time: 0.2s;
     height: 4px;
     width: 2rem;
     background-color: black;
-    transition: 0.3s;
     transform-origin: 51% 51%;
   }
   &::before {
@@ -138,8 +141,7 @@ $expand-collapse-anim-time: 0.2s;
   }
 }
 #branding {
-  padding: 1rem 0;
-  width: 100%;
+  margin-top: $content-padding;
   line-height: 1.1;
   a {
     color: unset;
@@ -166,7 +168,6 @@ $expand-collapse-anim-time: 0.2s;
   }
 }
 #links {
-  transition: $expand-collapse-anim-time;
   height: 20vh;
   overflow: hidden;
   display: flex;
@@ -178,7 +179,6 @@ $expand-collapse-anim-time: 0.2s;
   padding: 0 (4rem - $content-padding); // Hamburger icon width + padding - the negative padding on the right
 
   a {
-    transition: $expand-collapse-anim-time;
     margin: 0.3rem 0;
     display: block;
     color: $text-color;
@@ -186,14 +186,12 @@ $expand-collapse-anim-time: 0.2s;
     text-decoration: none;
     position: relative;
     &::after {
-      transition: 0.3s;
       display: block;
       content: "";
       position: absolute;
       bottom: 0;
       width: 100%;
       margin: 0 auto;
-      transition: 0.2s;
       bottom: -3px;
       height: 3px;
       opacity: 0;
@@ -210,7 +208,6 @@ $expand-collapse-anim-time: 0.2s;
     }
   }
 }
-
 @media only screen and (min-width: $breakpoint) {
   nav {
     display: flex;
@@ -223,16 +220,18 @@ $expand-collapse-anim-time: 0.2s;
   }
   #hamburger-menu {
     display: none;
+    padding: $content-padding 0;
   }
   #navbar.collapsed #links,
   #navbar:not(.collapsed) #links {
-    padding: $content-padding 0;
-    padding-left: $content-padding;
+    margin: $content-padding 0;
+    width: 100%;
     height: auto;
     flex-direction: row;
     justify-content: space-between;
     #links {
       width: 100%;
+      padding: 0;
     }
     a {
       opacity: 1;

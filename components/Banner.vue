@@ -16,11 +16,13 @@ const { page } = useContent();
 </script>
 
 <style scoped lang="scss">
+@import "@/assets/style/vars.scss";
 #banner {
   display: block;
-  width: 100vw;
-  height: 40vh;
-  max-height: 40vw;
+  max-width: $max-content-width;
+  height: 400px;
+  max-height: 50vh;
+  margin: 0 auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -79,27 +79,25 @@ hr {
 }
 
 .btn-primary {
-  font-size: 1em;
+  font-size: 0.9em;
   color: white !important;
   display: block;
   cursor: pointer;
   background-color: $accent-color;
-  padding: 0.3rem 0.8em;
+  padding: 0.5rem 1em;
   border-radius: 10px;
   text-decoration: none;
   color: unset;
   outline: none;
   border: none;
-  transition: 0.3s;
-  &:hover {
-    -webkit-box-shadow: 0px 0px 11px -3px #1ed700;
-    box-shadow: 0px 0px 11px -3px #1ed700;
-  }
 }
 
 @media only screen and (max-width: $breakpoint) {
   img {
     float: none !important;
     margin: 0 auto !important;
+  }
+  .image-caption {
+    text-align: center;
   }
 }

@@ -1,6 +1,8 @@
 <template>
   <div id="wrapper">
-    <form @submit="submit" v-ref="form" v-if="!messageSent">
+    <form ref="form" v-if="!messageSent">
+      <label for="email">Email</label>
+      <input type="email" name="email" required minlength="10" />
       <label for="subject">Betreff</label>
       <input type="text" name="subject" required minlength="10" />
       <label for="message">Nachricht</label>
@@ -12,7 +14,12 @@
         minlength="10"
         required
       ></textarea>
-      <input type="submit" class="btn-primary" value="Abschicken" />
+      <input
+        @click="submit"
+        type="button"
+        class="btn-primary"
+        value="Abschicken"
+      />
     </form>
     <p v-else>Nachricht gesendet!</p>
   </div>
@@ -56,6 +63,7 @@ textarea {
   resize: none;
 }
 input[type="text"],
+input[type="email"],
 textarea {
   color: $text-color;
   font-family: inherit;
@@ -67,11 +75,8 @@ textarea {
   outline: none;
   &:active,
   &:focus {
+    border-color: transparent;
     outline: 1px solid $accent-color;
   }
-}
-
-input[type="submit"] {
-  @extend .btn-primary;
 }
 </style>
