@@ -10,8 +10,9 @@
       </div>
       <div>
         <ul>
-          <li>Mail: <a href="mailto:roland@deleau.de">roland@deleau.de</a></li>
-          <li>Phone: <a href="tel:+49 1575 3535828">+49 1575 3535828</a></li>
+          <li><a href="mailto:roland@deleau.de">roland@deleau.de</a></li>
+          <li>🇩🇪 <a href="tel:+49 1575 3535828">+49 1575 3535828</a></li>
+          <li>🇫🇷 <a href="tel:+49 1575 3535828">+33 638 59 43 69</a></li>
           <li>Website by <a href="https://moritzclc.me">Moritz</a></li>
         </ul>
       </div>

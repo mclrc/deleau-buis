@@ -7,15 +7,38 @@ media_folder: public/img
 public_folder: /img
 
 collections:
-  - name: 'rubriken'
-    label: 'Rubrik'
-    folder: 'content'
-    format: 'frontmatter'
+  - name: "de_rubriken"
+    label: "Deutsche Rubrik"
+    folder: "content/de"
+    format: "frontmatter"
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
       preview: false
     fields:
-      - { label: 'Titel', name: 'title', widget: 'string' }
-      - { label: 'Banner', name: 'bannerImage', widget: 'image', required: false }
-      - { label: 'Inhalt', name: 'body', widget: 'markdown' }
+      - { label: "Titel", name: "title", widget: "string" }
+      - {
+          label: "Banner",
+          name: "bannerImage",
+          widget: "image",
+          required: false,
+        }
+      - { label: "Inhalt", name: "body", widget: "markdown" }
+
+  - name: "fr_rubriken"
+    label: "Franzoesische Rubrik"
+    folder: "content/fr"
+    format: "frontmatter"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - {
+          label: "Banner",
+          name: "bannerImage",
+          widget: "image",
+          required: false,
+        }
+      - { label: "Inhalt", name: "body", widget: "markdown" }

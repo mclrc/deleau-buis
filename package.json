@@ -17,6 +17,7 @@
     "sass": "^1.54.5"
   },
   "dependencies": {
+    "@egjs/vue3-flicking": "^4.10.5",
     "@microflash/remark-figure-caption": "^1.0.0"
   }
 }
