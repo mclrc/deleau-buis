@@ -76,7 +76,7 @@ textarea {
   &:active,
   &:focus {
     border-color: transparent;
-    outline: 1px solid $accent-color;
+    outline: 2px solid $accent-color;
   }
 }
 </style>

@@ -5,7 +5,7 @@
       <div>
         <ul>
           <li>Roland Deleau</li>
-          <li>Muskauer Strasse 20a<br />10997 Berlin</li>
+          <li>15, Place du Marché<br />F-26170 Buis Les Baronnies</li>
         </ul>
       </div>
       <div>

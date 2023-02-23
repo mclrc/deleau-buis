@@ -8,6 +8,7 @@
       <div id="top">
         <header id="branding">
           <h1>Palais Deleau</h1>
+          <h2><i>Ferien Mittendrin</i></h2>
         </header>
         <div id="hamburger-menu">
           <div>
@@ -32,13 +33,10 @@
 </template>
 
 <script setup lang="ts">
-import {
-  ref,
-  watch,
-} from 'vue';
+import { ref, watch } from "vue";
 
-import { useRoute } from 'vue-router';
-import { useContent } from '~~/.nuxt/imports';
+import { useContent } from "~~/.nuxt/imports";
+import { useRoute } from "vue-router";
 
 const scrolled = ref(false);
 const collapsed = ref(true);
@@ -147,10 +145,18 @@ $expand-collapse-anim-time: 0.2s;
 }
 #branding {
   line-height: 1.1;
-  font-family: "Dancing Script";
+  text-align: center;
   h1 {
+    font-family: "Dancing Script";
     font-size: 2rem;
     margin: 0;
+  }
+  h2 {
+    font-family: Quicksand;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin: 0;
+    letter-spacing: 0.3ch;
   }
 }
 #navbar.collapsed #links {
