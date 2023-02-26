@@ -9,15 +9,13 @@
   },
   "devDependencies": {
     "@nuxt/content": "npm:@nuxt/content-edge@latest",
-    "@types/leaflet": "^1.7.11",
     "@types/node": "^18.11.18",
     "eslint": "^8.33.0",
     "eslint-plugin-vue": "^9.9.0",
-    "nuxt": "npm:nuxt3@latest",
+    "nuxt": "npm:nuxt3@^3.2.3-rc.0-27949872.7479d46",
     "sass": "^1.54.5"
   },
   "dependencies": {
-    "@egjs/vue3-flicking": "^4.10.5",
-    "@microflash/remark-figure-caption": "^1.0.0"
+    "@microflash/remark-figure-caption": "*"
   }
 }

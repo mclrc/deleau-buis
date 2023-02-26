@@ -10,5 +10,4 @@
 <script lang="ts"></script>
 <style lang="scss">
 @import "@/assets/style/globals.scss";
-@import "@egjs/vue3-flicking/dist/flicking.css";
 </style>
