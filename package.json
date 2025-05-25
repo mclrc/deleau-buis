@@ -1,21 +1,31 @@
 {
+  "name": "nextjs-deleau-buis",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore ."
-  },
-  "devDependencies": {
-    "@nuxt/content": "npm:@nuxt/content-edge@latest",
-    "@types/node": "^18.11.18",
-    "eslint": "^8.33.0",
-    "eslint-plugin-vue": "^9.9.0",
-    "nuxt": "npm:nuxt3@^3.2.3-rc.0-27949872.7479d46",
-    "sass": "^1.54.5"
+    "dev": "next dev --turbopack",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@microflash/remark-figure-caption": "*"
+    "@tailwindcss/typography": "^0.5.16",
+    "gray-matter": "^4.0.3",
+    "next": "15.3.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

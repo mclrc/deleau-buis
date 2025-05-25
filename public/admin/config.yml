@@ -7,9 +7,9 @@ media_folder: public/img
 public_folder: /img
 
 collections:
-  - name: "rubriken"
-    label: "Rubrik"
-    folder: "content"
+  - name: "rubriken_de"
+    label: "Rubrik (Deutsch)"
+    folder: "content/de"
     format: "frontmatter"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -24,3 +24,21 @@ collections:
           required: false,
         }
       - { label: "Inhalt", name: "body", widget: "markdown" }
+  
+  - name: "rubriken_fr"
+    label: "Rubrique (Français)"
+    folder: "content/fr"
+    format: "frontmatter"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - {
+          label: "Bannière",
+          name: "bannerImage",
+          widget: "image",
+          required: false,
+        }
+      - { label: "Contenu", name: "body", widget: "markdown" }
