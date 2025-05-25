@@ -3,7 +3,7 @@
     id="banner"
     :style="{
       backgroundImage: `url(${
-        page.bannerImage ||
+        page?.bannerImage ||
         '/img/vue-sur-buis-2016-acrylic-toile-60-x-80-cm-kopie.jpg'
       })`,
     }"

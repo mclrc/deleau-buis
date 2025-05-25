@@ -12,7 +12,7 @@
         </header>
         <div id="hamburger-menu">
           <div>
-            <span id="route-name">{{ page.title }}</span>
+            <span id="route-name">{{ page?.title }}</span>
             <button
               aria-label="hamburger menu"
               id="hamburger"
